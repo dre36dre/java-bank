@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Registration of clients</title>
+</head>
+<body>
+<h1 th:text="${clients.id != null ? 'Edit client' : 'New client'}" ></h1>
+<form th:action="@{/clients/save}" th:object="${client}" method="post">
+<input type="hidden" th:field="*{id}" />
+<label> Name : <input type="text" th:field="*{name}" /></label><br/> 
+<label>Email : <input type="email" th:field="*{email}" /></label><br/> 
+<label>Telephone : <input type="text" th:field="*{telephone}" /></label><br/>
+<button  type="submit">Save</button> 
+</form>
+
+</body>
+</html>
+
+
+
